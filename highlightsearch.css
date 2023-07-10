@@ -1,5 +1,7 @@
 :root {
 	--primary-color: rgb(119, 81, 195);
+	--primary-color-hover: rgb(152, 133, 185);
+	--bg-color: rgb(255,255,255);
 }
 
 html,
@@ -27,8 +29,9 @@ h1,h2,h3,h4,h5,h6{
 .container{
 	display: flex;
 	flex-direction: column;
-	width: 300px;
+	width: 450px;
 	padding: 10px;
+	background: var(--bg-color)
 }
 
 .header{
@@ -36,9 +39,12 @@ h1,h2,h3,h4,h5,h6{
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	border-bottom: 1px solid var(--primary-color);
+	padding: 0px 0px 5px 0px;
 }
 .header .title{
 	font-size: 16px;
+	color: var(--primary-color)
 }
 .header p{
 	font-size: 15px;
@@ -47,12 +53,32 @@ h1,h2,h3,h4,h5,h6{
 
 .main{
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: flex-start;
 	width: 100%;
-	padding: 10px 0px;
+	padding: 20px 0px;
+	gap: 10px;
 }
 .main p{
 	font-size: 15px;
+}
+.main .options{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px 0px;
+}
+.main .options button{
+	height: 30px;
+	width: 80px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+	background: var(--primary-color);
+	color: var(--bg-color);
+}
+.main .options button:hover{
+	background: var(--primary-color-hover);
 }
