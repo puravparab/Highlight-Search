@@ -1,3 +1,58 @@
 :root {
 	--primary-color: rgb(119, 81, 195);
 }
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth !important;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+p{
+	margin: 0px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0px;
+}
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	padding: 10px;
+}
+
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.header .title{
+	font-size: 16px;
+}
+.header p{
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.main{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	padding: 10px 0px;
+}
+.main p{
+	font-size: 15px;
+}
