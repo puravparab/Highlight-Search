@@ -12,14 +12,23 @@
 		<div class="container">
 			<div class="header">
 				<h1 class="title">Highlight Search</h1>
-				<p>settings</p>
+				<p id="settingsBtn">settings</p>
 			</div>
+
 			<div class="main">
 				<p id="selectedText"></p>
 				<div class="options">
 					<button>AI Search</button>
 					<button>Search</button>
 				</div>
+			</div>
+
+			<div class="settings">
+				<div class="settings-input">
+					<label>OpenAI Key:</label>
+					<input name="openaikey" type="text"/>
+				</div>
+				<button type="submit" id="saveBtn">Save</button>
 			</div>
 		</div>
 		<script src="popup.js"></script>
