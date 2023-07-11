@@ -60,8 +60,14 @@ h1,h2,h3,h4,h5,h6{
 	padding: 20px 0px;
 	gap: 10px;
 }
-.main p{
+.main textarea{
 	font-size: 15px;
+	outline: none;
+	border: none;
+	width: 330px;
+	max-width: 330px;
+	min-width: 330px;
+	resize: none;
 }
 .main .options{
 	display: flex;

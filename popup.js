@@ -1,7 +1,10 @@
 // Get text selected by user
+const promptInput = document.querySelector('textarea[name="selectedText"]')
+
 chrome.storage.local.get("selectedText", (data) => {
 	const selectedText = data.selectedText || "No selected text";
-	document.getElementById("selectedText").textContent = selectedText;
+	promptInput.value = selectedText;
+	promptInput.style.height = `${promptInput.scrollHeight}px`;
 });
 
 // Handle settings
