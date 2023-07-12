@@ -9,6 +9,8 @@ body {
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth !important;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 a {
 	color: inherit;
@@ -40,7 +42,7 @@ h1,h2,h3,h4,h5,h6{
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid var(--primary-color);
-	padding: 0px 0px 5px 0px;
+	padding: 0px 0px 10px 0px;
 }
 .header .title{
 	font-size: 16px;
@@ -57,24 +59,38 @@ h1,h2,h3,h4,h5,h6{
 	justify-content: space-between;
 	align-items: flex-start;
 	width: 100%;
-	padding: 20px 0px;
-	gap: 10px;
+	padding: 10px 0px;
+	gap: 5px;
 }
-.main textarea{
-	font-size: 15px;
+.main-prompt{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	gap: 10px 0px;
+}
+.main-prompt h2{
+	font-size: 16px;
+	font-weight: 700;
+}
+.main-prompt textarea{
+	font-size: 16px;
 	outline: none;
 	border: none;
 	width: 330px;
 	max-width: 330px;
 	min-width: 330px;
-	resize: none;
+	max-height: 400px;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 .main .options{
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	gap: 15px 0px;
+	gap: 12px 0px;
 }
 button{
 	height: 30px;
@@ -89,13 +105,32 @@ button:hover{
 	background: var(--primary-color-hover);
 }
 
+.responseBody{
+	display: none;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 5px 0px;
+	width: 100%;
+	visibility: hidden;
+	border-top: 1px solid var(--primary-color);
+	padding: 10px 0px;
+}
+.responseBody h2{
+	font-size: 16px;
+	font-weight: 700;
+}
+.responseBody p{
+	font-size: 15px;
+}
+
 .settings{
 	display: none;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 100%;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	gap: 15px;
 	visibility: hidden;
 }
@@ -110,7 +145,7 @@ button:hover{
 .settings label{
 	font-size: 16px;
 	font-weight: 400;
-	width: 120px;
+	width: 100px;
 }
 .settings input{
 	font-size: 15px;

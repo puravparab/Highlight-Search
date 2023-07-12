@@ -4,7 +4,6 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Highlight Search</title>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap">
 		<link href="highlightsearch.css" rel="stylesheet" type="text/css" />
 	</head>
 
@@ -16,11 +15,19 @@
 			</div>
 
 			<div class="main">
-				<textarea name="selectedText" type="text" id="selectedText"></textarea>
+				<div class="main-prompt">
+					<h2>Prompt:</h2>
+					<textarea name="selectedText" type="text" id="selectedText"></textarea>
+				</div>
 				<div class="options">
-					<button>AI Search</button>
+					<button id="ai-search">AI Search</button>
 					<button>Search</button>
 				</div>
+			</div>
+
+			<div class="responseBody">
+				<h2>Response:</h2>
+				<p id="response"></p>
 			</div>
 
 			<div class="settings">
@@ -30,6 +37,7 @@
 				</div>
 				<button type="submit" id="saveBtn">Save</button>
 			</div>
+
 		</div>
 		<script src="popup.js"></script>
 	</body>

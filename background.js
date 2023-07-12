@@ -4,3 +4,4 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 		chrome.storage.local.set({ selectedText: selectedText });
 	}
 });
+
