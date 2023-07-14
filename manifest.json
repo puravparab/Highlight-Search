@@ -1,9 +1,9 @@
 {
 	"manifest_version": 3,
 	"name": "Highlight Search",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Highlight Search is a chrome extension that leverages AI-powered chat to prompt/search text highlighted on a website.",
-	"permissions": ["activeTab", "scripting", "storage"],
+	"permissions": ["activeTab", "scripting", "storage", "tabs"],
 	"action": {
 		"default_popup": "highlightsearch.html",
 		"default_title": "Highlight Search",
@@ -19,7 +19,7 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["scripts/content.js"]
+			"js": ["content-script.js"]
 		}
 	],
 	"background": {

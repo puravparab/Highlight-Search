@@ -1,5 +1,5 @@
 # Highlight Search
-Highlight Search is a chrome extension that leverages AI-powered chat to prompt/search text highlighted on a website.
+Chrome extension that leverages AI to search text highlighted on a website.
 
 ## Usage
 1. Clone the repository

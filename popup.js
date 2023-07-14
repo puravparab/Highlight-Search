@@ -51,7 +51,7 @@ chrome.storage.local.get("openaikey", (data) => {
 
 
 // OPENAI
-// Handle when user clicks "AI Search"
+// Handle event when user clicks "AI Search"
 const aisearchBtn = document.getElementById("ai-search")
 const responseTag = document.getElementById("response")
 
@@ -99,3 +99,11 @@ const fetchChatCompletion = async (prompt, model, openaikey) => {
 	const data = await res.json()
 	return data
 }
+
+// Google Search
+// Handle event when user clicks "Search"
+const searchBtn = document.getElementById("google-search")
+
+searchBtn.addEventListener("click", () => {
+	chrome.tabs.create({url: `https://www.google.com/search?q=${promptInput.value}`});
+})
