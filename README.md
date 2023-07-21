@@ -15,4 +15,4 @@ git clone https://github.com/puravparab/Highlight-Search.git
 
 ## Example
 
-![HS-1](https://github.com/puravparab/Highlight-Search/blob/2786306ade38ca8669e7eb97b367c9a5b359699d/assets/highlight-search.png)
+![HS-1](https://github.com/puravparab/Highlight-Search/blob/40880aeddd55eb7d98650eab6c0e1ef85e6a958d/assets/highlight-search.png)

@@ -19,15 +19,22 @@ const settings = document.getElementsByClassName("settings")[0]
 settingsBtn.addEventListener("click", () => {
 	if (mainDiv.style.display !== "none"){
 		mainDiv.style.display = "none"
+
 		responseDiv.style.visibility = "hidden"
 		responseDiv.style.display = "none"
+		
 		settingsBtn.innerHTML = "back"
 		settings.style.visibility = "visible"
 		settings.style.display = "flex"
 	} else {
 		mainDiv.style.display = "flex"
-		responseDiv.style.visibility = "visible"
-		responseDiv.style.display = "flex"
+
+		// If response exists show responseDiv
+		if (responseTag.innerHTML !== ""){
+			responseDiv.style.visibility = "visible"
+			responseDiv.style.display = "flex"
+		}
+
 		settingsBtn.innerHTML = "settings"
 		settings.style.visibility = "hidden"
 		settings.style.display = "none"
