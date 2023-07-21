@@ -34,19 +34,27 @@ settingsBtn.addEventListener("click", () => {
 	}
 });
 
-// Save API keys
+// Save settings
 const saveBtn = document.getElementById("saveBtn")
 const oaKey = document.querySelector('input[name="openaikey')
+const sysPrompt = document.querySelector('textarea[name="systemprompt"]')
 
 saveBtn.addEventListener("click", () => {
 	const openaiKey = oaKey.value.trim()
+	const systemprompt = sysPrompt.value.trim()
 	chrome.storage.local.set({openaikey: openaiKey})
+	chrome.storage.local.set({systemprompt: systemprompt})
 })
 
-// Get keys from storage and fill the inputs
+// Get keys from storage and fill the input
 chrome.storage.local.get("openaikey", (data) => {
 	const openaikey = data.openaikey;
 	oaKey.value = openaikey || "";
+});
+// Get system prompt from storage and fill the input
+chrome.storage.local.get("systemprompt", (data) => {
+	const systemprompt = data.systemprompt;
+	sysPrompt.value = systemprompt || "You are a helpful assistant.";
 });
 
 
@@ -67,7 +75,8 @@ aisearchBtn.addEventListener("click", async () => {
 			responseTag.innerHTML = "Error: No API Key"
 		} else {
 			const prompt = promptInput.value
-			const data = await fetchChatCompletion(prompt, "gpt-3.5-turbo", openaikey)
+			const systemprompt = sysPrompt.value
+			const data = await fetchChatCompletion(prompt, systemprompt, "gpt-3.5-turbo", openaikey)
 			if (data){
 				const formattedText = data["choices"][0]["message"]["content"].replace(/\n/g, "<br>");
 				responseTag.innerHTML = formattedText
@@ -77,13 +86,13 @@ aisearchBtn.addEventListener("click", async () => {
 })
 
 // Request chat completion from openai api
-const fetchChatCompletion = async (prompt, model, openaikey) => {
+const fetchChatCompletion = async (prompt, systemprompt, model, openaikey) => {
 	const url = "https://api.openai.com/v1/chat/completions"
 
 	const requestBody = {
 		"model": model,
 		"messages": [
-			{"role": "system", "content": "You are a helpful assitant."},
+			{"role": "system", "content": systemprompt},
 			{"role": "user", "content": prompt}
 		]
 	}

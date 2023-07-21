@@ -146,7 +146,8 @@ button:hover{
 	color: var(--primary-color);
 	width: 100px;
 }
-.settings input{
+.settings input,
+.settings textarea{
 	font-size: 15px;
 	font-weight: 400;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -156,6 +157,10 @@ button:hover{
 	outline: none;
 	border-radius: 10px;
 	border: none;
-	width: 80%;
+	width: 350px;
+	min-width: 350px;
+	max-width: 350px;
+	min-height: 40px;
+	max-height: 400px;
 	padding: 10px;
 }
