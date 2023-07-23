@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Highlight Search",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"description": "Chrome extension that leverages AI to search text highlighted on a website.",
 	"permissions": ["activeTab", "scripting", "storage", "tabs"],
 	"action": {

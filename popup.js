@@ -22,7 +22,7 @@ settingsBtn.addEventListener("click", () => {
 
 		responseDiv.style.visibility = "hidden"
 		responseDiv.style.display = "none"
-		
+
 		settingsBtn.innerHTML = "back"
 		settings.style.visibility = "visible"
 		settings.style.display = "flex"
@@ -74,6 +74,7 @@ aisearchBtn.addEventListener("click", async () => {
 	chrome.storage.local.get("openaikey", async (data) => {
 		const openaikey = data.openaikey;
 
+		// Prepare response body
 		responseTag.innerHTML = "Fetching response ..."
 		responseDiv.style.visibility = "visible"
 		responseDiv.style.display = "flex"
@@ -87,6 +88,8 @@ aisearchBtn.addEventListener("click", async () => {
 			if (data){
 				const formattedText = data["choices"][0]["message"]["content"].replace(/\n/g, "<br>");
 				responseTag.innerHTML = formattedText
+				// Store response
+				chrome.storage.local.set({response_content: formattedText})
 			}
 		}
 	});
@@ -115,6 +118,17 @@ const fetchChatCompletion = async (prompt, systemprompt, model, openaikey) => {
 	const data = await res.json()
 	return data
 }
+
+// RESPONSE BODY
+// Load old response if it exists
+chrome.storage.local.get("response_content", (data) => {
+	const response_content = data.response_content;
+	if (response_content){
+		responseDiv.style.visibility = "visible"
+		responseDiv.style.display = "flex"
+		responseTag.innerHTML = response_content
+	}
+});
 
 // Google Search
 // Handle event when user clicks "Search"
